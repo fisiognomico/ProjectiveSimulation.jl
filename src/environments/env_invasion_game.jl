@@ -8,7 +8,7 @@ mutable struct Invasion_Grid <: AbstractEnvironment
     next_state::Int
 end
 
-TaskEnvironment() = Invasion_Grid(2,[0,1], rand([0,1]))
+TaskEnvironment(num_actions=2, num_percepts=2, next_state=rand([0,1])) = Invasion_Grid(num_actions, num_percepts, next_state)
 
 function reset!(state::Invasion_Grid)
     return state.next_state

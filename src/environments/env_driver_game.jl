@@ -12,7 +12,7 @@ struct type Driver_Grid <: AbstractEnvironment
     next_state::Array{Int,1}
 end
 
-TaskEnvironment() = Driver_Grid( 2, 2, 2, [2,2], rand([0,1],2))
+TaskEnvironment(num_actions, num_directions, num_colors, num_percepts, next_state) = Driver_Grid( 2, 2, 2, [2,2], rand([0,1],2))
 
 function reset!(state::Invasion_Grid)
     return state.next_state
